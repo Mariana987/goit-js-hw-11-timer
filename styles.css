@@ -1,0 +1,22 @@
+body{
+    color:   #fb6d3a;
+    background-color: #5959599a;
+    font-size: 12px;
+}
+.timer{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  
+}
+
+.field{
+      margin-right: 20px; 
+       background-color:   #fb6d3a18;
+}
+.field:last-child{
+    margin-right: 0;
+}
+.value{
+ 
+}
