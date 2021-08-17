@@ -30,7 +30,7 @@ class CountdownTimer {
         const hours = this.pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
         const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
         const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
-        console.log(days, hours, mins, secs)
+
         return { days, hours, mins, secs }
 
     }
