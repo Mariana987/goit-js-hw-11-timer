@@ -13,7 +13,7 @@ class CountdownTimer {
     }
 
     start() {
-        setInterval(() => {
+        this.interval = setInterval(() => {
             const currentTime = Date.now()
             const deltaTime = this.targetDate - currentTime;
             const time = this.getTimeComponents(deltaTime);
@@ -36,6 +36,11 @@ class CountdownTimer {
     }
 
     updateClockSpan({ days, hours, mins, secs }) {
+        const time = this.targetDate - Date.now();
+        if (time <= 0) {
+            clearInterval(this.interval);
+            return;
+        }
         this.refs.daysRef.textContent = days;
         this.refs.hoursRef.textContent = hours;
         this.refs.minutesRef.textContent = mins;
@@ -48,7 +53,7 @@ class CountdownTimer {
 
 const timer = new CountdownTimer({
     choosenTimer: '#timer-1',
-    targetDate: new Date('Sep 1, 2021'),
+    targetDate: new Date('Sep 1, 2021 12:00'),
 })
 
 
